@@ -1,0 +1,32 @@
+/** 
+ * theming styles
+ * 
+ */
+
+#header {
+    background: url(../images/admin-tools.png) 0 0 repeat-x;
+}
+
+#header #branding h1 {
+    margin: 0;
+    padding: 5px 10px;
+    height: 31px;
+    width: 93px;
+    line-height: 31px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Arial, san-serif;
+    text-shadow: 2px 2px 2px #333333;
+}
+
+div.breadcrumbs {
+    display: block;
+    padding: 10px 15px;
+    border: 0;
+    background-position: 0 -8px;
+    border-bottom: 1px solid #ededed;
+}
+
+div.breadcrumbs a {
+    display: inline;
+}
