@@ -1,5 +1,7 @@
 <!doctype html>  
 
+{% load assets %}
+
 <html lang="en" class="{% block page_class %}{% endblock %} no-js">
 
     <meta charset="utf-8">
@@ -13,7 +15,6 @@
     <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico">
     <link rel="stylesheet"  href="{{ MEDIA_URL }}css/reset.css?v=1">
     <link rel="stylesheet"  href="{{ MEDIA_URL }}css/base.css?v=1">
-    <script src="{{ MEDIA_URL }}js/modernizr-1.6.min.js"></script>
 
     <header>
         <h1>
@@ -30,7 +31,8 @@
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script src="{{ MEDIA_URL }}js/script.js?v=1"></script>
+    <script src="{{ MEDIA_URL }}js/modernizr-1.6.min.js"></script>
+    <script src="{{ MEDIA_URL }}js/script.js"></script>
     <!--
     <script>
         var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
