@@ -1,0 +1,48 @@
+<!doctype html>  
+
+<html lang="en" class="{% block page_class %}{% endblock %} no-js">
+
+    <meta charset="utf-8">
+    <!--
+    <title>{% block page_title %}Welcome{% endblock %} | Site Name</title>
+    <meta name="description" content="Search engine description.">
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id="media-url" href="{{ MEDIA_URL }}" rel="media-url">
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico">
+    <link rel="stylesheet"  href="{{ MEDIA_URL }}css/reset.css?v=1">
+    <link rel="stylesheet"  href="{{ MEDIA_URL }}css/base.css?v=1">
+    <script src="{{ MEDIA_URL }}js/modernizr-1.6.min.js"></script>
+
+    <header>
+        <h1>
+            <!--
+            <a href="/">Site Name</a>
+            -->
+        </h1>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="{{ MEDIA_URL }}js/script.js?v=1"></script>
+    <!--
+    <script>
+        var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+        (function(d, t) {
+            var g = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            g.async = true;
+            g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s);
+        })(document, 'script');
+    </script>
+    -->
+
+    <!-- Cache time: {% now "jS F Y H:i:s" %} -->
+</html>
