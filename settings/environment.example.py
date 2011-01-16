@@ -1,26 +1,26 @@
-DEBUG = True
+DEBUG = [[DEBUG]]
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('[[YOUR_NAME]]', '[[YOUR EMAIL]]'),
 )
 
 MANAGERS = ADMINS
 
-SECRET_KEY = ''
+SECRET_KEY = '[[SECRET_KEY]]'
 
-MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = 'http://localhost:8000/media/admin/'
-
-CACHE_BACKEND = 'dummy://'
+MEDIA_URL = '[[MEDIA_URL]]'
+ADMIN_MEDIA_PREFIX = '[[ADMIN_MEDIA_PREFIX]]' 
+CACHE_BACKEND = '[[CACHE_BACKEND]]'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        # Backends: 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.[[DB_ENGINE]]',
+        'NAME': '[[DB_NAME]]',                         
+        'USER': '[[DB_USER]]',                         
+        'PASSWORD': '[[DB_PASSWORD]]',                 
+        'HOST': '[[DB_HOST]]',                                    
+        'PORT': '[[DB_PORT]]',
     }
 }
