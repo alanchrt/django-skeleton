@@ -1,5 +1,4 @@
 import os
-from environment import *
 
 project = lambda path: os.path.join(os.path.dirname(__file__), path)
 
