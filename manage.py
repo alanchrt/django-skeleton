@@ -78,7 +78,7 @@ if __name__ == "__main__":
         # Check database backend configuration
         try:
             if (DATABASES['default']['ENGINE'] ==
-                                'django.db.backends.[[DB_ENGINE]]'):
+                                'django.db.backends.[[DB_BACKEND]]'):
                 raise Exception, "Not configured"
         except:
             database_backend = raw_input("Database backend " +
@@ -102,12 +102,67 @@ if __name__ == "__main__":
             if (DATABASES['default']['NAME'] == '[[DB_NAME]]'):
                 raise Exception, "Not configured"
         except:
+            if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+                default = project('database.sqlite')
+            else:
+                default = ''
             DATABASES['default']['NAME'] = raw_input("Database name [" +
-                                         project('database.sqlite') + "]: ")
+                                         default + "]: ")
             if DATABASES['default']['NAME'] == '':
-                DATABASES['default']['NAME'] = project('database.sqlite')
+                DATABASES['default']['NAME'] = default
             new_data = new_data.replace('[[DB_NAME]]',
                                                 DATABASES['default']['NAME'])
+
+        # Check database user configuration
+        try:
+            if (DATABASES['default']['USER'] == '[[DB_USER]]'):
+                raise Exception, "Not configured"
+        except:
+            if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+                DATABASES['default']['USER'] = ''
+            else:
+                DATABASES['default']['USER'] = raw_input("Database user []: ")
+            new_data = new_data.replace('[[DB_USER]]',
+                                            DATABASES['default']['USER'])
+
+        # Check database password configuration
+        try:
+            if (DATABASES['default']['PASSWORD'] == '[[DB_PASSWORD]]'):
+                raise Exception, "Not configured"
+        except:
+            if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+                DATABASES['default']['PASSWORD'] = ''
+            else:
+                DATABASES['default']['PASSWORD'] = raw_input("Database " +
+                                                              "password []: ")
+            new_data = new_data.replace('[[DB_PASSWORD]]',
+                                            DATABASES['default']['PASSWORD'])
+
+        # Check database host configuration
+        try:
+            if (DATABASES['default']['HOST'] == '[[DB_HOST]]'):
+                raise Exception, "Not configured"
+        except:
+            if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+                DATABASES['default']['HOST'] = ''
+            else:
+                DATABASES['default']['HOST'] = raw_input("Database " +
+                                                          "host [localhost]: ")
+            new_data = new_data.replace('[[DB_HOST]]',
+                                            DATABASES['default']['HOST'])
+
+        # Check database port configuration
+        try:
+            if (DATABASES['default']['PORT'] == '[[DB_PORT]]'):
+                raise Exception, "Not configured"
+        except:
+            if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+                DATABASES['default']['PORT'] = ''
+            else:
+                DATABASES['default']['PORT'] = raw_input("Database " +
+                                      "port [default for database engine]: ")
+            new_data = new_data.replace('[[DB_PORT]]',
+                                            DATABASES['default']['PORT'])
 
         # Write the revised configuration
         if new_data != original_data:
