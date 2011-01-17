@@ -1,7 +1,5 @@
 import os
-
-project = lambda path: os.path.join(os.path.dirname(
-                            os.path.dirname(__file__)), path)
+from manage import project
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en-us'
