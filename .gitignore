@@ -1,2 +1,3 @@
 settings/environment.py
+database.sqlite
 *.pyc

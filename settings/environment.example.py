@@ -1,8 +1,8 @@
-DEBUG = [[DEBUG]]
+DEBUG = None
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('[[YOUR_NAME]]', '[[YOUR EMAIL]]'),
+    #('Your Name', 'email@company.com'),
 )
 
 MANAGERS = ADMINS
@@ -15,8 +15,7 @@ CACHE_BACKEND = '[[CACHE_BACKEND]]'
 
 DATABASES = {
     'default': {
-        # Backends: 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'ENGINE': 'django.db.backends.[[DB_ENGINE]]',
+        'ENGINE': 'django.db.backends.[[DB_BACKEND]]',
         'NAME': '[[DB_NAME]]',                         
         'USER': '[[DB_USER]]',                         
         'PASSWORD': '[[DB_PASSWORD]]',                 
