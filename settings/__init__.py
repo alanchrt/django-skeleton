@@ -1,9 +1,4 @@
-import os
 import sys
-
-project = lambda path: os.path.join(os.path.dirname(
-                                            os.path.dirname(__file__)), path)
-
 from settings.defaults import *
 
 if 'manage.py' not in sys.argv[0] or sys.argv[1] != 'configure':

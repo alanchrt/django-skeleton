@@ -1,4 +1,4 @@
-from settings import project
+from manage import project
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en-us'
