@@ -1,3 +1,5 @@
 settings/environment.py
 database.sqlite
+media/css/styles.min.css
+media/js/scripts.min.js
 *.pyc

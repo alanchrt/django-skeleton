@@ -16,6 +16,7 @@ USE_I18N = True
 USE_L10N = True
 
 MEDIA_ROOT = project('media')
+YUI_COMPRESSOR_PATH = project('yuicompressor-2.4.2.jar')
 
 ADMIN_TOOLS_MENU = 'menu.CustomMenu'
 ADMIN_TOOLS_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
@@ -54,6 +55,7 @@ INSTALLED_APPS = (
     'admin_tools.theming',
     'admin_tools.menu',
     'admin_tools.dashboard',
+    'django_assets',
     'south',
     'django.contrib.auth',
     'django.contrib.contenttypes',

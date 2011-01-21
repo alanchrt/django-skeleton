@@ -1,5 +1,7 @@
 <!doctype html>  
 
+{% load assets %}
+
 <html lang="en" class="{% block page_class %}{% endblock %} no-js">
 
     <meta charset="utf-8">
@@ -11,8 +13,9 @@
 
     <link id="media-url" href="{{ MEDIA_URL }}" rel="media-url">
     <link rel="shortcut icon" href="{{ MEDIA_URL }}graphics/favicon.ico">
-    <link rel="stylesheet"  href="{{ MEDIA_URL }}css/reset.css?v=1">
-    <link rel="stylesheet"  href="{{ MEDIA_URL }}css/base.css?v=1">
+    {% assets filter="yui_css", output="css/styles.min.css", "css/reset.css", "css/base.css" %}
+    <link rel="stylesheet"  href="{{ ASSET_URL }}">
+    {% endassets %}
 
     <header>
         <h1>
@@ -29,8 +32,9 @@
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script src="{{ MEDIA_URL }}js/modernizr-1.6.min.js"></script>
-    <script src="{{ MEDIA_URL }}js/script.js"></script>
+    {% assets filter="yui_js", output="js/scripts.min.js", "js/modernizr-1.6.min.js", "js/base.js" %}
+    <script src="{{ ASSET_URL }}"></script>
+    {% endassets %}
     <!--
     <script>
         var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
