@@ -1,5 +1,11 @@
 import os
 
+try:
+    from settings.environment import *
+except ImportError:
+    raise RuntimeError("Your environment settings are not configured. " +
+        "Please manually create and configure settings/environment.py.")
+
 project = lambda path: os.path.join(os.path.dirname(
                                             os.path.dirname(__file__)), path)
 
