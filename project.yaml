@@ -1,0 +1,13 @@
+configurations:
+    - origin: settings/environment.example.py
+      destination: settings/environment.py
+
+directories:
+    - path: media/js
+      permissions: '775'
+    - path: media/css
+      permissions: '775'
+
+#cron:
+#    - script: cron/update.py
+#      schedule: '0 0 * * *'
