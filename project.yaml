@@ -1,5 +1,5 @@
 configurations:
-    - origin: settings/environment.example.py
+    - source: settings/environment.example.py
       destination: settings/environment.py
 
 directories:
