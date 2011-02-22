@@ -7,7 +7,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-SECRET_KEY = ''
+SECRET_KEY = '{{ SECRET_KEY }}'
 
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = 'http://127.0.0.1:8000/media/admin/'
@@ -23,10 +23,10 @@ DEBUG_TOOLBAR_CONFIG = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'database.sqlite',
-        'USER': '',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '{{ DB_NAME }}',
+        'USER': '{{ DB_USER }}',
+        'PASSWORD': '{{ DB_PASSWORD }}',
         'HOST': '',
         'PORT': '',
     }
