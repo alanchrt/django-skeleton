@@ -2,6 +2,12 @@ configurations:
     - source: settings/environment.example.py
       destination: settings/environment.py
 
+directories:
+    - path: media/js
+      permissions: '777'
+    - path: media/css
+      permissions: '777'
+
 #cron:
 #    - script: cron/update.py
 #      schedule: '0 0 * * *'
