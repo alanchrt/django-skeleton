@@ -8,6 +8,13 @@ directories:
     - path: media/css
       permissions: '777'
 
+#dummy:
+#    fixtures:
+#        - myapp/fixtures/dummy.json
+#    files:
+#        - source: media/images.dummy/*
+#          destination: media/images/
+#
 #cron:
 #    - script: cron/update.py
 #      schedule: '0 0 * * *'
