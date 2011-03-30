@@ -14,7 +14,7 @@ from admin_tools.menu import items, Menu
 
 class CustomMenu(Menu):
     """
-    Custom Menu for genstone admin site.
+    Custom menu for admin site.
     """
     def __init__(self, **kwargs):
         Menu.__init__(self, **kwargs)
